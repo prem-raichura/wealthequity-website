@@ -1,10 +1,14 @@
 // src/pages/Home.jsx
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react'; 
 import AnimatedPage from '../components/AnimatedSection';
 import { motion } from 'framer-motion';
 import { FaChartLine, FaBookOpen, FaBullseye } from 'react-icons/fa';
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'WealthEquity | Home';
+  }, []);
   return (
     <AnimatedPage>
       <div className="space-y-24 md:space-y-32 pb-20">

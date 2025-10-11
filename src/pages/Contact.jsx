@@ -1,10 +1,14 @@
 // src/pages/Contact.jsx
 import AnimatedPage from '../components/AnimatedSection';
+import { useEffect } from 'react'; 
 import { motion } from 'framer-motion';
 import { FaWhatsapp, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = 'Contact | WealthEquity';
+  }, []);
   // Animation variants for staggering items
   const containerVariants = {
     hidden: { opacity: 0 },

@@ -1,9 +1,13 @@
 // src/pages/About.jsx
 import AnimatedPage from '../components/AnimatedSection';
+import { useEffect } from 'react'; 
 import { motion } from 'framer-motion';
 import { FiTarget, FiEye, FiZap, FiPlusCircle, FiRepeat, FiAward } from 'react-icons/fi';
 
 const About = () => {
+  useEffect(() => {
+    document.title = 'About | WealthEquity';
+  }, []);
   const principles = [
     { icon: <FiZap />, text: 'Train' },
     { icon: <FiPlusCircle />, text: 'Create' },

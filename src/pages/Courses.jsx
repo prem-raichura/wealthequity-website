@@ -1,5 +1,6 @@
 // src/pages/Courses.jsx
 import AnimatedPage from '../components/AnimatedSection';
+import { useEffect } from 'react'; 
 import CourseCard from '../components/CourseCard';
 import { motion } from 'framer-motion';
 import { FiTrendingUp, FiLayers, FiBarChart2, FiAward } from 'react-icons/fi';
@@ -41,6 +42,9 @@ const containerVariants = {
 };
 
 const Courses = () => {
+  useEffect(() => {
+    document.title = 'Courses | WealthEquity';
+  }, []);
   return (
     <AnimatedPage>
       <div className="container mx-auto px-4 py-16">

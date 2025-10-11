@@ -1,6 +1,7 @@
 // src/pages/Services.jsx
 import AnimatedPage from '../components/AnimatedSection';
 import ServiceCard from '../components/ServiceCard';
+import { useEffect } from 'react'; 
 import { motion } from 'framer-motion';
 import { FiBriefcase, FiBarChart2, FiFileText, FiCpu, FiMessageSquare } from 'react-icons/fi';
 
@@ -22,6 +23,9 @@ const containerVariants = {
 };
 
 const Services = () => {
+  useEffect(() => {
+    document.title = 'Services | WealthEquity';
+  }, []);
   return (
     <AnimatedPage>
       <div className="container mx-auto px-4 py-16">
