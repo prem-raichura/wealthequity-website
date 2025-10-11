@@ -1,29 +1,23 @@
 <p align="center">
-  <img src="PASTE_YOUR_LOGO_URL_HERE" alt="WealthEquity Logo" width="150">
+  <img src="https://wealthequity-website.vercel.app/assets/logo-CPAkW_iK.png" alt="WealthEquity Logo" width="150">
 </p>
 
-<h1 align="center">WealthEquity Official Website</h1>
+<h1 align="center">WealthEquity</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
-  <a href="YOUR_VERCEL_DEPLOYMENT_URL_HERE">
+  <a href="https://wealthequity-website.vercel.app/">
     <img src="https://vercel.com/button" alt="Deploy with Vercel">
   </a>
 </p>
 
 <p align="center">
-  > Your personal investing partner, transforming complex financial data into actionable insights for your generational wealth.
+  > Nexus of Knowdledge and Investment
 </p>
 
 ---
-
-<p align="center">
-  <img src="PLACEHOLDER_FOR_WEBSITE_GIF_OR_SCREENSHOT" alt="WealthEquity Website Demo">
-</p>
-
-> **Note:** For the best visual, replace the placeholder above with a GIF of your website in action. You can use a tool like Giphy Capture or ScreenToGif to record your screen scrolling through the home page to showcase the animations.
 
 ## ✨ Introduction
 
