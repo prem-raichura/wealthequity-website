@@ -60,7 +60,7 @@ Make sure you have [Node.js](https://nodejs.org/) (version 16 or later) and npm 
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/prem-raichura/wealthequity-website.git](https://github.com/prem-raichura/wealthequity-website.git)
+    git clone https://github.com/prem-raichura/wealthequity-website.git
     ```
 
 2.  **Navigate to the project directory:**
