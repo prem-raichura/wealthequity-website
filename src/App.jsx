@@ -1,0 +1,55 @@
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Courses from './pages/Courses';
+import Contact from './pages/Contact';
+import SingleServicePage from './pages/services/SingleServicePage';
+import SingleCoursePage from './pages/courses/SingleCoursePage';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+function App() {
+  const location = useLocation();
+  return (
+    <>
+      <ScrollToTop />
+      <Navbar />
+      <main>
+        {/* AnimatePresence enables animations on route changes */}
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/services/:serviceId" element={<SingleServicePage />} />
+            <Route path="/courses/:courseId" element={<SingleCoursePage />} />
+          </Routes>
+        </AnimatePresence>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+// We need to wrap App in Router for useLocation hook to work
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;
