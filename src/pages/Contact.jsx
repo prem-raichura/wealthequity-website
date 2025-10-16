@@ -32,7 +32,7 @@ const Contact = () => {
     { icon: <FaWhatsapp />, text: "WhatsApp", href: "https://wa.me/6354422959" },
     { icon: <MdEmail />, text: "Email", href: "mailto:wealtheqwork@gmail.com" },
     { icon: <FaLinkedin />, text: "LinkedIn", href: "https://www.linkedin.com/in/wealth-equity-91a14a27b/" },
-    { icon: <FaInstagram />, text: "Instagram", href: "https://www.instagram.com/wealthequity/" }
+    { icon: <FaInstagram />, text: "Instagram", href: "https://www.instagram.com/wealthequity_/" }
   ];
 
   return (
