@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import AnimatedPage from '../components/AnimatedSection';
 import { motion } from 'framer-motion';
 import { FaChartLine, FaBookOpen, FaBullseye } from 'react-icons/fa';
+import TickerBar from '../components/TickerBar';
 
 const Home = () => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const Home = () => {
   }, []);
   return (
     <AnimatedPage>
+      <TickerBar />
       <div className="space-y-24 md:space-y-32 pb-20">
         {/* Hero Section */}
         <section className="text-center pt-20 md:pt-32">
