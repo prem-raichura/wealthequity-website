@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
@@ -15,6 +14,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Courses', path: '/courses' },
+    { name: 'Calculator', path: '/calculator' },
     { name: 'About', path: '/about' },
     {
       name: 'Compliance',
@@ -29,16 +29,14 @@ const Navbar = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
-  // Animation variants for the main mobile menu items
   const mobileLinkVariants = {
     open: { y: 0, opacity: 1 },
     closed: { y: -20, opacity: 0 }
   };
 
-  // --- NEW VARIANTS FOR THE DROPDOWN CONTAINER ---
   const mobileDropdownVariants = {
     open: {
-      clipPath: "inset(0% 0% 0% 0%)", // Reveals the content
+      clipPath: "inset(0% 0% 0% 0%)",
       transition: {
         type: "spring",
         stiffness: 300,
@@ -47,7 +45,7 @@ const Navbar = () => {
       },
     },
     closed: {
-      clipPath: "inset(10% 0% 90% 0%)", // Hides the content
+      clipPath: "inset(10% 0% 90% 0%)",
       transition: {
         type: "spring",
         stiffness: 300,
