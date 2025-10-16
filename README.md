@@ -1,16 +1,89 @@
-# React + Vite
+<p align="center">
+  <img src="https://wealthequity-website.vercel.app/assets/logo-CPAkW_iK.png" alt="WealthEquity Logo" width="150">
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">WealthEquity</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <a href="https://wealthequity-website.vercel.app/">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel">
+  </a>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  > Nexus of Knowdledge and Investment
+</p>
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## ✨ Introduction
 
-## Expanding the ESLint configuration
+This repository contains the source code for the official website of **WealthEquity**, a financial education and equity research company. The site is a fully responsive, multi-page application built with a modern tech stack to provide a fluid, engaging, and professional user experience. It features detailed pages for the company's services and educational courses, all wrapped in a visually stunning design with glassmorphism effects and smooth animations.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Key Features
+
+* 📱 **Fully Responsive Design:** A seamless experience on all devices, from mobile phones to desktop screens.
+* 💨 **Smooth Animations & Transitions:** Powered by **Framer Motion**, the site features elegant page transitions and scroll-based animations that bring the content to life.
+* 💎 **Modern Glassmorphism UI:** A sophisticated and attractive user interface that uses semi-transparent, blurred backgrounds for a premium feel.
+* 📄 **Dynamic-Looking Detail Pages:** Static templates for individual services and courses that are structured to be easily connected to a backend or CMS.
+* 🌐 **Multi-Page Routing:** A complete website structure with pages for Home, About, Services, Courses, and Contact, all handled by **React Router**.
+* ⚡ **Lightning-Fast Performance:** Built with **Vite** and SWC for an incredibly fast development experience and optimized production builds.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Framework:** [React.js](https://reactjs.org/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Animations:** [Framer Motion](https://www.framer.com/motion/)
+* **Routing:** [React Router DOM](https://reactrouter.com/)
+* **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+* **Deployment:** [Vercel](https://vercel.com/)
+
+---
+
+## 🔧 Getting Started
+
+To run this project locally, follow these simple steps.
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) (version 16 or later) and npm installed on your machine.
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/prem-raichura/wealthequity-website.git
+    ```
+
+2.  **Navigate to the project directory:**
+    ```bash
+    cd wealthequity-website
+    ```
+
+3.  **Install the dependencies:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+The application will now be running on `http://localhost:5173`.
+
+---
+
+## 🌐 Deployment
+
+This project is configured for seamless deployment on **Vercel**.
+
+Every push to the `main` branch will automatically trigger a new deployment, ensuring the live site is always up-to-date. The `vercel.json` file is included to handle client-side routing rewrites, ensuring all pages work correctly on the live server.
