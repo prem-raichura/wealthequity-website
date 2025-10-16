@@ -3,15 +3,29 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { FiChevronDown } from 'react-icons/fi';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isComplianceOpen, setIsComplianceOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Courses', path: '/courses' },
     { name: 'About', path: '/about' },
+    {
+      name: 'Compliance',
+      path: '/compliance', // Main path for mobile view
+      isDropdown: true,
+      subLinks: [
+        { name: 'SEBI Investment Charter', path: '/compliance' },
+        { name: 'SEBI Complaints', path: '/sebi-complaints' },
+        { name: 'ODR Portal', path: '/odr-portal' },
+        { name: 'Grievance Redresal', path: '/grievance-redressal' },
+      ],
+    },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -24,9 +38,47 @@ const Navbar = () => {
               <img className="h-12 w-auto" src={logo} alt="WealthEquity Logo" />
             </NavLink>
           </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navLinks.map((link) => (
+          
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-4">
+            {navLinks.map((link) =>
+              link.isDropdown ? (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => setIsComplianceOpen(true)}
+                  onMouseLeave={() => setIsComplianceOpen(false)}
+                >
+                  <button className="px-3 py-2 flex items-center gap-1 rounded-md text-sm font-medium text-light-gray hover:text-brand-green transition-colors duration-300">
+                    {link.name}
+                    <FiChevronDown className={`transition-transform duration-300 ${isComplianceOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {isComplianceOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900/80 backdrop-blur-lg border border-gray-700 rounded-lg shadow-lg"
+                      >
+                        <div className="py-2">
+                          {link.subLinks.map((subLink) => (
+                            <NavLink
+                              key={subLink.name}
+                              to={subLink.path}
+                              onClick={() => setIsComplianceOpen(false)}
+                              className="block w-full text-left px-4 py-2 text-sm text-light-gray hover:bg-brand-green/10 hover:text-brand-green"
+                            >
+                              {subLink.name}
+                            </NavLink>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
                 <NavLink
                   key={link.name}
                   to={link.path}
@@ -38,42 +90,52 @@ const Navbar = () => {
                 >
                   {link.name}
                 </NavLink>
-              ))}
-            </div>
+              )
+            )}
           </div>
+          
+          {/* Mobile Menu Button */}
           <div className="-mr-2 flex md:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white"
             >
               <span className="sr-only">Open main menu</span>
-              {isOpen ? <HiX className="block h-6 w-6" /> : <HiMenu className="block h-6 w-6" />}
+              {isMobileOpen ? <HiX className="block h-6 w-6" /> : <HiMenu className="block h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
-                    isActive ? 'text-brand-green bg-gray-900' : 'text-light-gray hover:text-brand-green hover:bg-gray-800'
-                  }`
-                }
-              >
-                {link.name}
-              </NavLink>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="md:hidden overflow-hidden"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navLinks.map((link) => (
+                <NavLink
+                  key={link.name}
+                  to={link.path} // Mobile links go to the main path
+                  onClick={() => setIsMobileOpen(false)}
+                  className={({ isActive }) =>
+                    `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+                      isActive ? 'text-brand-green bg-gray-900' : 'text-light-gray hover:text-brand-green hover:bg-gray-800'
+                    }`
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

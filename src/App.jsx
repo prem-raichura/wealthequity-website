@@ -9,6 +9,10 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Courses from './pages/Courses';
 import Contact from './pages/Contact';
+import SEBICharterPage from './pages/compliance/SEBICharterPage';
+import SEBIComplaintsPage from './pages/compliance/SEBIComplaintsPage';
+import ODRPortalPage from './pages/compliance/ODRPortalPage';
+import GrievanceRedressalPage from './pages/compliance/GrievanceRedressalPage';
 import SingleServicePage from './pages/services/SingleServicePage';
 import SingleCoursePage from './pages/courses/SingleCoursePage';
 
@@ -35,6 +39,10 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/compliance" element={<SEBICharterPage />} />
+            <Route path="/sebi-complaints" element={<SEBIComplaintsPage />} />
+            <Route path="/odr-portal" element={<ODRPortalPage />} />
+            <Route path="/grievance-redressal" element={<GrievanceRedressalPage />} />
             <Route path="/services/:serviceId" element={<SingleServicePage />} />
             <Route path="/courses/:courseId" element={<SingleCoursePage />} />
           </Routes>
